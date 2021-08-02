@@ -13,11 +13,12 @@ class hangman {
 
     // parse csv file and store all the puzzles
     parseCsvFile() {
+        var csvFile;
         // Parse local CSV file
         if (this.lang == "english") {
-            let csvFile = "https://satvikraman.github.io/hangman/assets/english.csv";
+            csvFile = "https://satvikraman.github.io/hangman/assets/english.csv";
         } else {
-            let csvFile = "https://satvikraman.github.io/hangman/assets/german.csv";
+            csvFile = "https://satvikraman.github.io/hangman/assets/german.csv";
         }
         Papa.parse(csvFile, 
                     {
@@ -30,4 +31,4 @@ class hangman {
     }
 }
 
-game = new hangman("english");
+game = new hangman("german");
