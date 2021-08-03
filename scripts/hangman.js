@@ -8,6 +8,7 @@ class hangman {
 
     choosePuzzle() {
         let randomRow = Math.floor(Math.random()*this.puzzles.data.length);
+        this.q = this.puzzles.data[randomRow][0];
         console.log(this.puzzles.data[randomRow][0],  this.puzzles.data[randomRow][1]);
     }
 
@@ -29,6 +30,14 @@ class hangman {
                         }
                     });
     }
+
+    checkUserInput() {
+        console.log(this.q);
+    }
 }
+
+document.addEventListener("keypress", event => {
+    game.checkUserInput();
+});
 
 game = new hangman("german");
