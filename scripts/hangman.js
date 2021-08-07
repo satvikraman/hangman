@@ -1,15 +1,16 @@
 class hangman {
     constructor(lang) {
         this.lang = lang;
-        this.wrongAns = 0;
-        this.rightAns = 0;
         this.parseCsvFile();
-    }
+    }; 
 
     choosePuzzle() {
         let randomRow = Math.floor(Math.random()*this.puzzles.data.length);
         this.q = this.puzzles.data[randomRow][0];
         console.log(this.puzzles.data[randomRow][0],  this.puzzles.data[randomRow][1]);
+        this.wrongAns = 0;
+        this.rightAns = 0;
+        this.attempts = [];
     }
 
     // parse csv file and store all the puzzles
@@ -31,13 +32,29 @@ class hangman {
                     });
     }
 
-    checkUserInput() {
-        console.log(this.q);
+    checkUserInput(event) {
+        if (this.attempts.indexOf(event.key) == -1) {
+            this.attempts.push(event.key);
+            var letterFound = false;
+            for (let i = 0; i < this.q.length; i++) {
+                if (event.key == this.q[i]) {
+                    letterFound = true;    
+                }  
+            }   
+            if (letterFound == true) {
+                this.rightAns++;
+            } else {
+                this.wrongAns++;
+            } 
+        }
+
+        console.log(this.rightAns);
+        console.log(this.wrongAns);
     }
 }
 
-document.addEventListener("keypress", event => {
-    game.checkUserInput();
-});
+document.addEventListener("keypress", event =>{
+    game.checkUserInput(event);
+}); 
 
 game = new hangman("german");
