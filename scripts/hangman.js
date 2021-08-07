@@ -7,6 +7,7 @@ class hangman {
     choosePuzzle() {
         let randomRow = Math.floor(Math.random()*this.puzzles.data.length);
         this.q = this.puzzles.data[randomRow][0];
+        this.ans = this.q.replace(/[a-zA-Z]/ig, '_'); 
         console.log(this.puzzles.data[randomRow][0],  this.puzzles.data[randomRow][1]);
         this.wrongAns = 0;
         this.rightAns = 0;
