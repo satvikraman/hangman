@@ -34,12 +34,13 @@ class hangman {
     }
 
     checkUserInput(event) {
-        if (this.attempts.indexOf(event.key) == -1) {
+        if ((this.attempts.indexOf(event.key) == -1) && (this.wrongAns < 6)) {
             this.attempts.push(event.key);
             var letterFound = false;
             for (let i = 0; i < this.q.length; i++) {
                 if (event.key == this.q[i]) {
-                    letterFound = true;    
+                    letterFound = true; 
+                    this.ans = this.ans.substring(0, i) + event.key + this.ans.substring(i + 1, this.ans.length);  
                 }  
             }   
             if (letterFound == true) {
@@ -51,6 +52,7 @@ class hangman {
 
         console.log(this.rightAns);
         console.log(this.wrongAns);
+        console.log(this.ans);0
     }
 }
 
