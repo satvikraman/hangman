@@ -47,6 +47,8 @@ class hangman {
                 this.rightAns++;
             } else {
                 this.wrongAns++;
+                var picName = "img/hangman" + this.wrongAns + ".png";
+                document.getElementById("Hangman").src = picName;
             } 
         }
 
