@@ -8,7 +8,9 @@ class hangman {
         let randomRow = Math.floor(Math.random()*this.puzzles.data.length);
         this.q = this.puzzles.data[randomRow][0];
         this.ans = this.q.replace(/[a-zA-Z]/ig, '_'); 
+        document.getElementById("Ans").innerHTML = this.ans;
         console.log(this.puzzles.data[randomRow][0],  this.puzzles.data[randomRow][1]);
+        document.getElementById("Clue").innerHTML = this.puzzles.data[randomRow][1];
         this.wrongAns = 0;
         this.rightAns = 0;
         this.attempts = [];
@@ -43,6 +45,7 @@ class hangman {
                     this.ans = this.ans.substring(0, i) + event.key + this.ans.substring(i + 1, this.ans.length);  
                 }  
             }   
+            document.getElementById("Ans").innerHTML = this.ans;
             if (letterFound == true) {
                 this.rightAns++;
             } else {
