@@ -65,4 +65,18 @@ document.addEventListener("keypress", event =>{
     game.checkUserInput(event);
 }); 
 
-game = new hangman("german");
+game = new hangman("english");
+
+// javascript for UI
+function buttonClick() {
+    document.getElementById("dropDownContentID").classList.toggle("show");
+}
+
+function englishLang() {
+    game = new hangman("english");
+    document.getElementById("dropDownContentID").classList.toggle("show");
+}
+function germanLang() {
+    game = new hangman("german");
+    document.getElementById("dropDownContentID").classList.toggle("show");
+}
