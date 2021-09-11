@@ -1,6 +1,8 @@
 .selectLanguage {
     position: relative;
-    display: inline-block;
+    display: inline-block; 
+    left: 50%;
+    transform: translateX(-50%);
   }
 
 .dropButton {
@@ -51,3 +53,14 @@ button:hover {
     background: green;
     color: white;
 }
+
+#Ans {
+    letter-spacing: 0.2em;
+    text-align: center;
+}
+
+#Clue {
+    text-align: center;
+}
+
+
