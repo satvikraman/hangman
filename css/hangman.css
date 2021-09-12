@@ -63,4 +63,24 @@ button:hover {
     text-align: center;
 }
 
+#Hangman {
+    position: relative;
+    display: block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.newGame {
+    position: relative;
+    display: inline-block; 
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 200px;
+}
 

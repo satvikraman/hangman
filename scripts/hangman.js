@@ -80,3 +80,7 @@ function germanLang() {
     game = new hangman("german");
     document.getElementById("dropDownContentID").classList.toggle("show");
 }
+
+function newGame() {
+    game.choosePuzzle();
+}
