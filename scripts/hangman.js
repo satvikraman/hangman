@@ -14,6 +14,8 @@ class hangman {
         this.wrongAns = 0;
         this.rightAns = 0;
         this.attempts = [];
+        var picName = "img/hangman" + this.wrongAns + ".png";
+        document.getElementById("Hangman").src = picName; 
     }
 
     // parse csv file and store all the puzzles
